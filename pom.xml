@@ -27,11 +27,6 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-stream</artifactId>
-			<version>3.0.3.RELEASE</version>
-		</dependency>
 		<!-- Spring boot starter is coming as transitive dependency from cloud 
 			stream, but let's make it explicit -->
 		<dependency>
@@ -55,6 +50,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-binder-kafka</artifactId>
 			<version>3.0.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
