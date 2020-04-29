@@ -15,7 +15,6 @@ import org.springframework.kafka.support.KafkaHeaderMapper;
 import org.springframework.messaging.Message;
 
 @SpringBootApplication
-// @EnableBinding(Processor.class)
 @EnableConfigurationProperties(ScdfTestTransformerProperties.class)
 @Configuration
 public class ScdfTestTransformer {
@@ -26,11 +25,8 @@ public class ScdfTestTransformer {
 	@Autowired
 	protected ScdfTestTransformerProperties config;
 
-	// @Transformer(inputChannel = Processor.INPUT, outputChannel = Processor.OUTPUT)
 	@Bean
-	public Function<Message<?>, Map<String, Object>> transform(
-	// Message<?> message
-	) {
+	public Function<Message<?>, Map<String, Object>> transform() {
 		return message -> {
 			Object payload = message.getPayload();
 			Map<String, Object> result = new HashMap<>();
